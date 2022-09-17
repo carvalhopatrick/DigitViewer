@@ -323,23 +323,19 @@ void process_write(
         tracker.print_progress();
     }
 }
-void to_text_file(BasicDigitReader& reader){
-    Console::println("\n\nWrite to Text File");
-    Console::println();
-
+void to_text_file(BasicDigitReader& reader, char* dig_start, char* dig_end, char* dest_path){
     uiL_t limit = reader.stream_end();
     if (limit == 0){
         limit = (uiL_t)0 - 1;
     }
-
-    uiL_t start = Console::scan_label_uiL_range("Starting Digit: ", 1, limit);
-    uiL_t end   = Console::scan_label_uiL_range("Ending Digit:   ", start + MIN_COMPRESS_DIGITS, limit);
+    
+    uiL_t start = (uiL_t)strtoull(dig_start, NULL, 10);
+    uiL_t end = (uiL_t)strtoull(dig_end, NULL, 10);
     start--;
     uiL_t digits = end - start;
     Console::println();
 
-    Console::println("Enter the path of the destination file:");
-    std::string path = Console::scan_utf8();
+    std::string path = dest_path;
     Console::println();
 
     //  Extract the extension

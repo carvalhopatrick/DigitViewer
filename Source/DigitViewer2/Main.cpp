@@ -3,11 +3,12 @@
 #include "DigitViewer/DigitViewerUI2.h"
 using namespace ymp;
 
-int main(){
+int main(int argc, char* argv[]){
     try{
-
+        Console::println("Launching DigitViewer..");
+        //if (argc < 4) throw 
         //  Launch the main menu.
-        DigitViewer2::Menu_Main();
+        DigitViewer2::Menu_Main(argc, argv);
 
     }catch (Exception &e){
         e.print();
@@ -16,5 +17,5 @@ int main(){
     }
 
     Console::println("\n");
-    Console::Pause('w');
+    // Console::Pause('w');
 }

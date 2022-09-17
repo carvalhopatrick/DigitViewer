@@ -65,7 +65,7 @@ void Menu_TextFile(BasicTextReader& reader){
             compute_stats(reader);
             return;
         case 2:
-            to_text_file(reader);
+            // to_text_file(reader);
             return;
         case 3:
             to_ycd_file_all(reader);
@@ -133,7 +133,7 @@ void Menu_YcdFile(BasicYcdSetReader& reader){
                 compute_stats(reader);
                 return;
             case 2:
-                to_text_file(reader);
+                //to_text_file(reader);
                 return;
             case 3:
                 to_ycd_file_all(reader);
@@ -180,20 +180,12 @@ void Menu_DigitViewer(bool skip_header){
         throw FileIO::FileException("Menu_DigitViewer()", path, "Unrecognized Extension: " + extension);
     }
 }
-void Menu_Main(){
-    Console::println(VERSION, 'G');
-    Console::println();
-
-    Console::print("Copyright ", 'T');
-    Console::print("2008-2019 Alexander J. Yee");
-    Console::print("      ");
-    Console::print("( a-yee@u.northwestern.edu )");
-    Console::println("\n");
-
-    Console::print("Distribute Freely - Please Report any Bugs", 'w');
-    Console::println("\n\n");
-
-    Menu_DigitViewer(true);
+void Menu_Main(int argc, char* argv[]){
+    
+    std::string path(argv[1]);
+    BasicYcdSetReader reader(path);
+    to_text_file(reader, argv[2], argv[3], argv[4]);
+    Console::println("DigitViewer: finished conversion");
 }
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

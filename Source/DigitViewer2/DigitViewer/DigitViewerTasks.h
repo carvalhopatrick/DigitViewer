@@ -22,7 +22,7 @@ namespace DigitViewer2{
 ////////////////////////////////////////////////////////////////////////////////
 void view_range(BasicDigitReader& reader);
 void compute_stats(BasicDigitReader& reader);
-void to_text_file(BasicDigitReader& reader);
+void to_text_file(BasicDigitReader& reader, char* dig_start, char* dig_end, char* dest_path);
 void to_ycd_file_all(BasicDigitReader& reader);
 void to_ycd_file_partial(BasicDigitReader& reader);
 ////////////////////////////////////////////////////////////////////////////////

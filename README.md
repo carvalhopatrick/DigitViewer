@@ -1,6 +1,17 @@
 y-cruncher's Digit Viewer
 ===========
 
+Forked from [Mysticial/DigitViewer](https://github.com/Mysticial/DigitViewer) and modified to be able to convert .ycd files into .txt by a single CLI call with all the needed arguments. 
+
+Modification made in a rush for a specific use, so the code is spaghetti and it doesn't check the input parameters. But well, it works!
+
+Usage: 
+
+```DigitViewer <input.ycd> <starting digit> <ending digit> <output.txt>```
+
+Original Readme:
+===========
+
 This is the full self-contained source code for y-cruncher's integrated Digit Viewer.<br>
 It includes everything including the heavily optimized back-end conversion code.
 
